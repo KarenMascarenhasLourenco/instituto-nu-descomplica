@@ -1,6 +1,18 @@
 body{
   height:100vh;
 }
+.quemsomos{
+  margin-left:4rem;
+  margin-top:2rem;
+  display:flex;
+  justify-content:space-around;
+}
+.quemsomos div{
+  width:40vw;
+}
+.quemsomos img{
+  width:30vw;
+}
 footer{
   min-height:4rem;
 }
