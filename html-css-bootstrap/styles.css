@@ -13,6 +13,18 @@ body{
 .quemsomos img{
   width:30vw;
 }
+.staff{
+  display:flex;
+  justify-content:space-around;
+  align-content:center;
+  margin:1rem 0;
+}
+.staff-card{
+  padding:2rem 0;
+}
+.staff-card img{
+  align-self:center;
+}
 footer{
   min-height:4rem;
 }
