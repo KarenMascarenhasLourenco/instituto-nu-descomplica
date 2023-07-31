@@ -1,0 +1,13 @@
+.staff{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content:space-around;
+  align-content:center;
+  margin:1rem 0;
+}
+.carrinhoCompra{
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  margin-left: 5rem;
+}
