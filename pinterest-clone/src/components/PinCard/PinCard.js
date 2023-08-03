@@ -1,5 +1,7 @@
 import React from "react";
 import './PinCard.css'
+import { Button } from "../Button/Button"
+import { Badge } from "../Badge/Badge";
 export const PinCard = () => {
  return (
   <div>
@@ -7,7 +9,7 @@ export const PinCard = () => {
     <img src="http://placehold.it/" alt="" />
     <div className="overlay">
      <p className="">pasta</p>
-     <p className="">salvar</p>
+     <Button/>
      <p className="">link da imagem</p>
     </div>
    </div>
