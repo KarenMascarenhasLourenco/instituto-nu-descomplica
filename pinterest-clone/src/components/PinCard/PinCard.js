@@ -13,6 +13,10 @@ export const PinCard = () => {
      <p className="">link da imagem</p>
     </div>
    </div>
+   <div className="card-content">
+    <h3 className='card-title' >Título</h3>
+    <p className='card-description'>descrição</p>
+   </div>
   </div>
  );
 };
