@@ -1,0 +1,33 @@
+.card-img {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 4s ;
+}
+
+.card-img:hover img {
+  transform: scale(1.1) ;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  transition: opacity 3s;
+}
+
+.card-img:hover .overlay {
+  display: block;
+}

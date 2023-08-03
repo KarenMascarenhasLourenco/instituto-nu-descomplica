@@ -1,19 +1,18 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
+import './PinCard.css'
+export const PinCard = () => {
+ return (
+  <div>
+   <div className="card-img">
+    <img src="http://placehold.it/" alt="" />
+    <div className="overlay">
+     <p className="">pasta</p>
+     <p className="">salvar</p>
+     <p className="">link da imagem</p>
+    </div>
+   </div>
+  </div>
+ );
+};
 
-export const PinCard = () =>{
-  return (
-   <Card className="bg-dark text-white">
-    <Card.Img src="holder.js/100px270" alt="Card image" />
-    <Card.ImgOverlay>
-     <Card.Title>Card title</Card.Title>
-     <Card.Text>
-      This is a wider card with supporting text below as a natural lead-in to
-      additional content. This content is a little bit longer.
-     </Card.Text>
-     <Card.Text>Last updated 3 mins ago</Card.Text>
-    </Card.ImgOverlay>
-   </Card>
-  );
-}
-export default PinCard
+export default PinCard;
