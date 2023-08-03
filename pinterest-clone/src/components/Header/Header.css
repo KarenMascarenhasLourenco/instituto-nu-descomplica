@@ -1,0 +1,14 @@
+header,ul{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header ul{
+  list-style-type: none;
+  gap: 3rem;
+}
+ul li a{
+  text-decoration: none;
+  color:black;
+  cursor: pointer;
+}
