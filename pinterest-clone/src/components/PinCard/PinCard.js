@@ -9,8 +9,8 @@ export const PinCard = ({ image, title, total }) => {
         <img src={image} alt='' />
         <div className='overlay'>
           <p className=''>pasta</p>
-          <Button >
-            <Badge total={total}/>
+          <Button>
+            <Badge total={total} />
           </Button>
           <p className=''>{image}</p>
         </div>
