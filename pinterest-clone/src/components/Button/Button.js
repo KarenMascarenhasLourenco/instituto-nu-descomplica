@@ -1,12 +1,11 @@
 import React from 'react'
 import './Button.css'
-import Badge from '../Badge/Badge'
 
-export const Button = ({ total }) => {
+export const Button = ({ children }) => {
   return (
     <button className='button'>
       Salvar
-      <Badge total={total} />
+      {children}
     </button>
   )
 }

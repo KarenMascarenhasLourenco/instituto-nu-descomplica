@@ -2,6 +2,7 @@
   padding:8px;
   border:none;
   border-radius:4px;
-  background-color: rgb(205, 37, 37);
+  background-color: var(--cor-primaria);
   color:white;
+  cursor: pointer;
 }
