@@ -1,13 +1,11 @@
-import React from  'react';
-import { PinCard } from '../components/PinCard/PinCard';
-import Header from '../components/Header/Header';
+import React from 'react'
+import { PinCard } from '../components/PinCard/PinCard'
 export const Home = () => {
   return (
-   <>
-    <Header/>
-    <PinCard />
-   </>
-  );
+    <>
+      <PinCard title='title' total={9} image='bhb' />
+    </>
+  )
 }
 
-export default Home;
+export default Home

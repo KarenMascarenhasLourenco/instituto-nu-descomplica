@@ -1,12 +1,13 @@
-import React from 'react';
-import './Button.css';
-import Badge from '../Badge/Badge';
+import React from 'react'
+import './Button.css'
+import Badge from '../Badge/Badge'
 
-export const Button = () =>{
+export const Button = ({ total }) => {
   return (
-  <button className="button">
-    Salvar
-    <Badge/>
-  </button>)
+    <button className='button'>
+      Salvar
+      <Badge total={total} />
+    </button>
+  )
 }
 export default Button
