@@ -1,6 +1,7 @@
 import React from 'react'
 import './PinCard.css'
 import { Button } from '../Button/Button'
+import { Badge } from '../Badge/Badge'
 export const PinCard = ({ image, title, total }) => {
   return (
     <div>
@@ -8,7 +9,9 @@ export const PinCard = ({ image, title, total }) => {
         <img src={image} alt='' />
         <div className='overlay'>
           <p className=''>pasta</p>
-          <Button total={total} />
+          <Button >
+            <Badge total={total}/>
+          </Button>
           <p className=''>{image}</p>
         </div>
       </div>
