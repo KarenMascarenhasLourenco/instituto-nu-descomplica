@@ -4,18 +4,19 @@ import Modal from '../components/Modal/Modal'
 export const Home = () => {
   return (
     <>
-      <Modal isOpen={true} 
-      title={'Salvar Pin'}
-      controls={[
-        {
-        label:'Criar Pasta',
-        onClick:() => {console.log('clicou em salvar pasta')}
-        },
-        {
-        label:'Salvar Pin',
-        onClick:() => {console.log('clicou em salvar pin')}
-        }
-      ]}
+      <Modal
+        isOpen
+        title='Salvar Pin'
+        controls={[
+          {
+            label: 'Criar Pasta',
+            onClick: () => { console.log('clicou em salvar pasta') }
+          },
+          {
+            label: 'Salvar Pin',
+            onClick: () => { console.log('clicou em salvar pin') }
+          }
+        ]}
       >
         <p>Home</p>
       </Modal>
