@@ -1,25 +1,41 @@
 import React from 'react'
 import './Modal.css'
+import ReactModal from 'react-modal'
 
-export const Modal = () => {
+ReactModal.setAppElement("#root");
+export const Modal = ({ isOpen, onClose, title, children, controls = []}) => {
   return (
+   <ReactModal
+    isOpen={isOpen}
+    onRequestClose={onClose}
+    className="modal-content"
+    overlayClassName="modal-overlay"
+   >
     <section>
-      <div>
-        <h2>Título do modal</h2>
-        <button>X</button>
-        <hr />
-        <select>
-          <option value='opção1'>Opção 1</option>
-          <option value='opção1'>Opção 1</option>
-          <option value='opção1'>Opção 1</option>
-        </select>
-        <form>
-          <input type='text' />
-          <button type='button'>Criar pasta</button>
-        </form>
-      </div>
+     <div className="modal-header">
+      <h2>{title}</h2>
+      <button className='button'>X</button>
+     </div>
+     <hr />
+     {children}
+     <select>
+      <option value="opção1">Opção 1</option>
+      <option value="opção1">Opção 1</option>
+      <option value="opção1">Opção 1</option>
+     </select>
+     {controls.map((control, controlIndex) => (
+        <button key={controlIndex} onClick={control.onClick.bind(control)}>{control.label}</button>
+     ))}
+     <form className='create-folder'>
+      <input type="text" />
+      <button className='button' onClick={onClose} type="button">
+       Criar pasta
+      </button>
+     </form>
+    
     </section>
-  )
+   </ReactModal>
+  );
 }
 
 export default Modal
