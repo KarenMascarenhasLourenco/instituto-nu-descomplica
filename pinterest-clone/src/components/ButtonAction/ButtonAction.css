@@ -6,3 +6,8 @@
   color:white;
   cursor: pointer;
 }
+.buttonAction{
+  display:flex;
+  align-items: center;
+  gap:.5rem;
+}
