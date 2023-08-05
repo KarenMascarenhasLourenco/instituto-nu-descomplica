@@ -2,6 +2,7 @@ import React from 'react'
 import './Modal.css'
 import ReactModal from 'react-modal'
 import ButtonAction from '../ButtonAction/ButtonAction'
+import Spinner from '../Spinner/Spinner'
 
 ReactModal.setAppElement('#root')
 export const Modal = ({ isOpen, onClose, title, children, controls = [] }) => {
@@ -26,6 +27,7 @@ export const Modal = ({ isOpen, onClose, title, children, controls = [] }) => {
         </select>
         {controls.map((control, controlIndex) => (
           <ButtonAction key={controlIndex} onClick={control.onClick.bind(control)}>
+            <Spinner/>
             {control.label}
           </ButtonAction>
         ))}
