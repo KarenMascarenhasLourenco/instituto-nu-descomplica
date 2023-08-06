@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 export const Header = (props) => {
@@ -8,10 +8,10 @@ export const Header = (props) => {
       <nav>
         <ul>
           <li>
-            <a href=''>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href=''>Minhas Pastas</a>
+            <Link to='/minhas-pastas'>Minhas pastas</Link>
           </li>
         </ul>
       </nav>
