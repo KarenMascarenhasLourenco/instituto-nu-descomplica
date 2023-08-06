@@ -1,0 +1,19 @@
+.alert-notification{
+  background-color: lightgreen;
+  color: green;
+  position: fixed;
+  bottom:2rem;
+  font-size: 1.7rem;
+  padding:2rem 4rem;
+  display:flex;
+  left: calc(50% - 12.5rem);
+  width: 25rem;
+  justify-content: center;
+  border-radius: .5rem;
+}
+.alert-notification div[type="button"]{
+  cursor:pointer;
+  position: absolute;
+  top:1rem;
+  right: 1rem;
+}
