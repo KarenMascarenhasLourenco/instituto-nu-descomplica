@@ -1,0 +1,15 @@
+.list-group{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+.list-group li {
+  margin: .3rem;
+  padding:0 1rem;
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border:solid 1px darkgrey;
+  border-radius: .5rem;
+}
