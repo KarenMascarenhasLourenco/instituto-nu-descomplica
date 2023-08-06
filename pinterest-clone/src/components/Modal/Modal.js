@@ -2,7 +2,6 @@ import React from 'react'
 import './Modal.css'
 import ReactModal from 'react-modal'
 import ButtonAction from '../ButtonAction/ButtonAction'
-import Spinner from '../Spinner/Spinner'
 
 ReactModal.setAppElement('#root')
 export const Modal = ({ isOpen, onClose, title, children, controls = [] }) => {
@@ -20,23 +19,12 @@ export const Modal = ({ isOpen, onClose, title, children, controls = [] }) => {
         </div>
         <hr />
         {children}
-        <select>
-          <option value='opção1'>Opção 1</option>
-          <option value='opção1'>Opção 1</option>
-          <option value='opção1'>Opção 1</option>
-        </select>
         {controls.map((control, controlIndex) => (
-          <ButtonAction key={controlIndex} onClick={control.onClick.bind(control)}>
-            <Spinner/>
-            {control.label}
-          </ButtonAction>
+          <ButtonAction
+           key={controlIndex} 
+           {...control}
+           />
         ))}
-        <form className='create-folder'>
-          <input type='text' />
-          <button className='button' onClick={onClose} type='button'>
-            Criar pasta
-          </button>
-        </form>
       </section>
     </ReactModal>
   )
