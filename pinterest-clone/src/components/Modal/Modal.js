@@ -21,9 +21,9 @@ export const Modal = ({ isOpen, onClose, title, children, controls = [] }) => {
         {children}
         {controls.map((control, controlIndex) => (
           <ButtonAction
-           key={controlIndex} 
-           {...control}
-           />
+            key={controlIndex}
+            {...control}
+          />
         ))}
       </section>
     </ReactModal>
