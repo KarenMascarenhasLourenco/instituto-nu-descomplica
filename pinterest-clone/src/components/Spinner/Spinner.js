@@ -3,7 +3,7 @@ import './Spinner.css'
 
 const Spinner = ({ loading, disable }) => {
   return (
-    loading ? <div className='spinner' /> : ''
+    loading ? <div className='spinner' disable={disable}/> : ''
   )
 }
 export default Spinner
