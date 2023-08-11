@@ -1,12 +1,11 @@
 import PinCard from "../../components/PinCard/PinCard";
 import { useAppContext } from "../../store/AppContext";
+import { openModalSavePinAction } from "../../store/Action";
 const Card = (props) => {
   const { state, dispatch} = useAppContext()
   const handleClick= () => {
     console.log('aeeeeeeeee ta dando certo')
-    dispatch({
-      type:'open modal save pin'
-    })
+    dispatch(openModalSavePinAction())
     console.log({ state })
   }
   return(

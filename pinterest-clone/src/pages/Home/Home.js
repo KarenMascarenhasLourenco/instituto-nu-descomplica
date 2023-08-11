@@ -8,7 +8,7 @@ export const Home = () => {
   const { state} = useAppContext()
   return (
     <>
-      <ModalCreateFolder/>
+      <ModalCreateFolder isOpen={state.mode ==='createFolder'}/>
       <ModalSavePin isOpen={state.mode ==='savePin'} />
       <Card title='title' total={9} image='bhb' />
       <Alert message='pasta criada com sucesso' />

@@ -1,16 +1,28 @@
-export function reducer( state, action){
-  switch (action.type) {
-   case "open modal save pin":
-    return {
-     ...state,
-     mode: "savePin",
-    };
-    case 'close modals':
+import * as types from './Types';
+
+export function reducer(state, action) {
+ switch (action.type) {
+  case types.openModalSavePinType:
+   return {
+    ...state,
+    mode: "savePin",
+   };
+  case types.closeModalsType:
+   return {
+    ...state,
+    mode: null,
+   };
+   case types.fetchFoldersSucessType:
+    return{
+      ...state,
+      folders:action.payload
+    }
+    case types.openModalCreateFolderType:
       return{
         ...state,
-        mode:null
+        mode:'createFolder'
       }
-   default:
-    return state;
-  }
+  default:
+   return state;
+ }
 }
