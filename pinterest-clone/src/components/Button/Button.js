@@ -2,12 +2,13 @@ import React from 'react'
 import './Button.css'
 import Spinner from '../Spinner/Spinner'
 
-const ButtonAction = ({ label, loading, labelLoading, ...buttonProps }) => {
+const Button = ({ label, loading, children, loadinglabel, ...buttonProps }) => {
   return (
     <button className='button buttonAction' {...buttonProps}>
       <Spinner loading={loading} />
-      {loading ? labelLoading : label}
+      {loading ? loadinglabel : label}
+      {children}
     </button>
   )
 }
-export default ButtonAction
+export default Button

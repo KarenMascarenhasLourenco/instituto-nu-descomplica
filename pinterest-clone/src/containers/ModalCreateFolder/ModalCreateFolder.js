@@ -19,7 +19,7 @@ const ModalCreateFolder = ({ isOpen }) => {
       controls={[
         {
           label: 'Criar e salvar',
-          loadingLabel: 'salvando...',
+          loadinglabel: 'salvando...',
           type: 'submit',
           form: 'form-criar-pasta'
         }

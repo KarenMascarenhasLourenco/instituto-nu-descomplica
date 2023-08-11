@@ -15,7 +15,7 @@ const ModalSavePin = ({ isOpen }) => {
             console.log('criou pasta')
           },
           loading: true,
-          labelLoading: 'Salvando pin',
+          loadinglabel: 'Salvando pin',
           disable: false
         }
       ]}
