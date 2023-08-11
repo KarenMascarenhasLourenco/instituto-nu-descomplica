@@ -1,9 +1,10 @@
 import React from 'react'
 import { PinCard } from '../../components/PinCard/PinCard'
-import ModalSavePin from '../../containers/ModalSavePin/ModalSavePin'
 import ModalCreateFolder from '../../containers/ModalCreateFolder/ModalCreateFolder'
 import Alert from '../../components/Alert/Alert'
+import { useAppContext } from '../../store/AppContext'
 export const Home = () => {
+  const value = useAppContext()
   return (
     <>
       <ModalCreateFolder isOpen={false} />
