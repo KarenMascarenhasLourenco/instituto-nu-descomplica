@@ -1,15 +1,15 @@
 import React from "react";
 import "./PinCard.css";
-import { Button } from "../Button/Button";
-import { Badge } from "../Badge/Badge";
-export const PinCard = ({ image, title, total }) => {
+import Button from "../Button/Button";
+import Badge from "../Badge/Badge";
+export const PinCard = ({ image, title, total, onClick }) => {
  return (
   <div>
    <div className="card-img">
     <img src={image} alt="" />
     <div className="overlay">
      <p className="">pasta</p>
-     <Button>
+     <Button onClick={onClick} label='Salvar'>
       <Badge total={total} />
      </Button>
      <p className="">{image}</p>
