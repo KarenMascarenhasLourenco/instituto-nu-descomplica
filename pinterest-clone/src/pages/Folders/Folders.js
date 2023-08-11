@@ -1,7 +1,9 @@
-import ListGroup from '../../components/ListGroup/ListGroup'
-import './Folders.css'
+import ListGroup from '../../components/ListGroup/ListGroup';
+import './Folders.css';
+import { useAppContext } from "../../store/AppContext";
 
 const Folders = () => {
+  const user = useAppContext()
   return (
     <div>
       <ListGroup

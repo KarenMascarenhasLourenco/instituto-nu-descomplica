@@ -1,7 +1,7 @@
 import React from 'react'
 import './Modal.css'
 import ReactModal from 'react-modal'
-import ButtonAction from '../ButtonAction/ButtonAction'
+import Button from '../Button/Button'
 
 ReactModal.setAppElement('#root')
 export const Modal = ({ isOpen, onClose, title, children, controls = [] }) => {
@@ -20,7 +20,7 @@ export const Modal = ({ isOpen, onClose, title, children, controls = [] }) => {
         <hr />
         {children}
         {controls.map((control, controlIndex) => (
-          <ButtonAction
+          <Button
             key={controlIndex}
             {...control}
           />
