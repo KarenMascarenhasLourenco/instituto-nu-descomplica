@@ -1,8 +1,15 @@
 import * as types from './Types';
 import * as pinService from '../services/PinService';
 
-export const openModalSavePinAction = () => ({
-  type:types.openModalSavePinType
+const sleep = (time) => 
+  new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+
+
+export const openModalSavePinAction = (pinId) => ({
+  type:types.openModalSavePinType,
+  payload:pinId,
 })
 
 export const closeModalsAction = () => ({
@@ -18,7 +25,7 @@ export const fetchFolderInitAction = () => ({
   type: types.fetchFoldersInitType
 })
 
-export const fetchFolderSucessAction = (folders) => ({
+export const fetchFoldersSucessAction = (folders) => ({
   type: types.fetchFoldersSucessType,
   payload: folders
 })
@@ -26,8 +33,24 @@ export const fetchFolderSucessAction = (folders) => ({
 export const fetchFoldersAction = async (dispatch) =>{
   dispatch(fetchFolderInitAction)
   const folders = await pinService.getFolders()
-  dispatch(fetchFolderSucessAction(folders))
-  return{
-    type:types.fetchFoldersType
-  }
+  dispatch(fetchFoldersSucessAction(folders))
 }
+
+//-------------
+
+export const saveFolderInitAction = () => ({
+ type: types.saveFolderInitType,
+});
+
+export const saveFolderSucessAction = (folder) => ({
+ type: types.saveFolderSucessType,
+ payload: folder,
+});
+
+export const saveFolderAction = async (dispatch, folderName) => {
+ dispatch(saveFolderInitAction());
+ await sleep(1500);
+ const newFolder = await pinService.saveFolder(folderName)
+ dispatch(saveFolderSucessAction(newFolder))
+ 
+};
