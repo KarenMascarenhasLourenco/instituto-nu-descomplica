@@ -6,7 +6,11 @@ export const getFolders = async () =>{
   return JSON.parse(localStorage.getItem('folders')) || []
 }
 
-export const saveFolders = async (folderName) =>{
+const saveFolders = async (folders) => {
+ localStorage.setItem("folders", JSON.stringify(folders));
+};
+
+export const saveFolder = async (folderName) =>{
   const folders = await getFolders()
   const newFolder = {
    id: generateId,
@@ -14,11 +18,16 @@ export const saveFolders = async (folderName) =>{
    pins: [],
   };
   folders.push(newFolder);
-  localStorage.setItem('folders', JSON.stringify(folders))
+
+  await saveFolders(folders);
+
+  return newFolder;
 }
 
 export const savePin = async (folderId, pinId) =>{
+
   const folders = await getFolders()
+  
   const folderIndex = folders.findIndex(f => f.id === folderId)
   folderIndex !==-1 ? folders[folderIndex].pins.push(pinId):console.log('pasta não encontrada');
 
