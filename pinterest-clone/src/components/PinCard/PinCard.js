@@ -2,14 +2,15 @@ import React from "react";
 import "./PinCard.css";
 import Button from "../Button/Button";
 import Badge from "../Badge/Badge";
-export const PinCard = ({ image, title, total, onClick }) => {
+export const PinCard = ({ pinId, image, title, total, onClick }) => {
  return (
   <div>
+    {console.log(pinId)}
    <div className="card-img">
     <img src={image} alt="" />
     <div className="overlay">
      <p className="">pasta</p>
-     <Button onClick={onClick} label='Salvar'>
+     <Button onClick={()=>onClick(pinId)} label='Salvar'>
       <Badge total={total} />
      </Button>
      <p className="">{image}</p>
