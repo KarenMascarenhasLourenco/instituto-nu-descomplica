@@ -1,4 +1,3 @@
-import React from 'react'
 import Home from './pages/Home/Home'
 import Header from './partials/Header/Header'
 import Folders from './pages/Folders/Folders'
@@ -7,10 +6,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 const initialState = {
-  activePin: null,
+  activePinId: null,
   mode:null,
   folders:[],
-  type:null
+  type:null,
+  pins:[]
 }
 
 function App () {
@@ -18,7 +18,7 @@ function App () {
     <BrowserRouter>
       <div className='App'>
         <Header />
-        <AppContext initalState={ { initialState }}>
+        <AppContext initialState={ initialState }>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/minhas-pastas' element={<Folders />} />
