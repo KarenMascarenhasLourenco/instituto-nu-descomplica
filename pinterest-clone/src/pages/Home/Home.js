@@ -17,7 +17,7 @@ export const Home = () => {
 
   return (
    <>
-    {console.log(state.type === saveFolderSucessType, state.type)}
+    {console.log(state.type === saveFolderSucessType, state.type,state)}
     <ModalCreateFolder isOpen={state.mode === "createFolder"} />
     <ModalSavePin isOpen={state.mode === "savePin"} />
     <Card pinId='123' title="title" total={9} image="bhb" />
