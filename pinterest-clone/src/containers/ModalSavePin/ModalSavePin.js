@@ -3,6 +3,7 @@ import Modal from '../../components/Modal/Modal'
 import { useAppContext } from '../../store/AppContext'
 import { fetchFoldersAction, closeModalsAction, openModalCreateFolderAction } from '../../store/Action'
 import Button from '../../components/Button/Button'
+import './ModalSavePin.css'
 
 const ModalSavePin = ({ isOpen }) => {
   const { state,  dispatch } = useAppContext()
@@ -36,14 +37,17 @@ const ModalSavePin = ({ isOpen }) => {
      },
     ]}
    >
-    <select>
+    <ul className="folderList">
      {state.folders.map((folder, folderIndex) => (
       <>
-       <option key={folderIndex}>{folder.name}</option>
-       <Button></Button>
+       <li key={folderIndex}>
+        {folder.name}
+        <Button label="Salvar" loadinglabel="Salvando" loading={false} />
+       </li>
+       <hr/>
       </>
      ))}
-    </select>
+    </ul>
    </Modal>
   );
 }
