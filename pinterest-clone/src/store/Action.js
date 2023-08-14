@@ -52,5 +52,18 @@ export const saveFolderAction = async (dispatch, folderName) => {
  await sleep(1500);
  const newFolder = await pinService.saveFolder(folderName)
  dispatch(saveFolderSucessAction(newFolder))
- 
 };
+
+//----------------------------------------------------------------
+export const savePinInFolderInitAction = () => ({
+ type: types.savePinInFolderInitType,
+});
+
+export const savePinInFolderSucessAction = () => ({
+ type: types.savePinInFolderSucessType,
+
+});
+
+export const savePinInFolder = (dispatch, pinId, folderId) => {
+  console.log(pinId, folderId)
+}
