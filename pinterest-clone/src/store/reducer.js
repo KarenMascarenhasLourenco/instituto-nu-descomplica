@@ -18,12 +18,14 @@ export function reducer(state, action) {
   case types.closeModalsType:
    return {
     ...state,
+    type: types.closeModalsType,
     mode: null,
    };
   //----------
   case types.fetchFoldersSucessType:
    return {
     ...state,
+    type: types.fetchFoldersSucessType,
     folders: action.payload,
    };
   case types.fetchFoldersInitType:
@@ -34,6 +36,7 @@ export function reducer(state, action) {
   case types.saveFolderSucessType:
    return {
     ...state,
+    type: types.saveFolderSucessType,
     folders: [...state.folders, action.payload],
    };
   default:
