@@ -1,0 +1,16 @@
+.folderList{
+  display:flex;
+  flex-direction:column;
+  list-style-type: none;
+  padding:0;
+}
+.folderList li{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  width: 100%;
+}
+.folderList hr{
+  border-top:lightgrey 1px solid;
+  width: 100%;
+}
