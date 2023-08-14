@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Modal from '../../components/Modal/Modal'
 import { useAppContext } from '../../store/AppContext'
 import { fetchFoldersAction, closeModalsAction, openModalCreateFolderAction } from '../../store/Action'
+import Button from '../../components/Button/Button'
 
 const ModalSavePin = ({ isOpen }) => {
   const { state,  dispatch } = useAppContext()
@@ -37,7 +38,10 @@ const ModalSavePin = ({ isOpen }) => {
    >
     <select>
      {state.folders.map((folder, folderIndex) => (
-      <option key={folderIndex}>{folder.name}</option>
+      <>
+       <option key={folderIndex}>{folder.name}</option>
+       <Button></Button>
+      </>
      ))}
     </select>
    </Modal>
