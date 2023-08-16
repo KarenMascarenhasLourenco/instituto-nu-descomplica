@@ -1,36 +1,40 @@
-const generateId = () =>{
-  return `${(Math.floor(Math.random()*100_000)).toString(16)} -${(Math.floor(Math.random()*100_000)).toString(16)}`
-}
-
-export const getFolders = async () =>{
-  return JSON.parse(localStorage.getItem('folders')) || []
-}
+const generateId = () => {
+ return `${Math.floor(Math.random() * 100_000).toString(16)}-${Math.floor(
+  Math.random() * 100_000
+ ).toString(16)}`;
+};
+export const getFolders = async () => {
+ return JSON.parse(localStorage.getItem("folders")) || [];
+};
 
 const saveFolders = async (folders) => {
  localStorage.setItem("folders", JSON.stringify(folders));
 };
 
-export const saveFolder = async (folderName) =>{
-  const folders = await getFolders()
-  const newFolder = {
-   id: generateId,
-   name: folderName,
-   pins: [],
-  };
-  folders.push(newFolder);
+export const saveFolder = async (folderName) => {
+ const folders = await getFolders();
 
-  await saveFolders(folders);
+ const newFolder = {
+  id: generateId(),
+  name: folderName,
+  pins: [],
+ };
+ 
+ folders.push(newFolder);
 
-  return newFolder;
-}
+ await saveFolders(folders);
 
-export const savePin = async (folderId, pinId) =>{
+ return newFolder;
+};
 
-  const folders = await getFolders()
-  
-  const folderIndex = folders.findIndex(f => f.id === folderId)
-  folderIndex !==-1 ? folders[folderIndex].pins.push(pinId):console.log('pasta não encontrada');
+export const savePin = async (folderId, pinId) => {
+ const folders = await getFolders();
 
-  localStorage.setItem('folders',JSON.stringify(folders))
-  return {...folders[folderIndex]}
-}
+ const folderIndex = folders.findIndex((f) => f.id === folderId);
+ folderIndex !== -1
+  ? folders[folderIndex].pins.push(pinId)
+  : console.log("pasta não encontrada");
+
+ localStorage.setItem("folders", JSON.stringify(folders));
+ return { ...folders[folderIndex] };
+};
