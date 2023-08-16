@@ -16,8 +16,8 @@ const ModalSavePin = ({ isOpen }) => {
     dispatch(openModalCreateFolderAction())
   }
 
-  const handleClick = ()=>{
-    console.log('clicou em salvar')
+  const handleClick = (folderId)=>{
+    console.log('clicou em salvar', folderId)
   }
   useEffect(() => {
     fetchFoldersAction(dispatch)
@@ -43,13 +43,17 @@ const ModalSavePin = ({ isOpen }) => {
    >
     <ul className="folderList">
      {state.folders.map((folder, folderIndex) => (
-      <>
+    
        <li key={folderIndex}>
         {folder.name}
-        <Button label="Salvar" loadinglabel="Salvando" onClick={handleClick} loading={false} />
+        <Button
+         label="Salvar"
+         loadinglabel="Salvando"
+         onClick={() => handleClick(folder.id)}
+         loading={false}
+        />
+        <hr />
        </li>
-       <hr/>
-      </>
      ))}
     </ul>
    </Modal>
