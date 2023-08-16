@@ -47,10 +47,6 @@ export const saveFolderSucessAction = (folder) => ({
  payload: folder,
 });
 
-export const savePinInFolder = (dispatch, folderId,pinId) => {
-  console.log(pinId, folderId)
-}
-
 export const saveFolderAction = async (dispatch, folderName) => {
  dispatch(saveFolderInitAction());
  await sleep(1500);
@@ -63,7 +59,16 @@ export const savePinInFolderInitAction = () => ({
  type: types.savePinInFolderInitType,
 });
 
-export const savePinInFolderSucessAction = () => ({
+export const savePinInFolderSucessAction = (folders) => ({
  type: types.savePinInFolderSucessType,
+ payload:folders
 
 });
+
+export const savePinInFolderAction = async (dispatch, folderId, pinId) => {
+  dispatch(savePinInFolderInitAction())
+  await sleep(1500);
+  await pinService.savePin( pinId, folderId)
+  const folders = await pinService.getFolders()
+  dispatch(savePinInFolderSucessAction(folders))
+};
