@@ -52,7 +52,6 @@ const ModalSavePin = ({ isOpen }) => {
          onClick={() => handleClick(folder.id)}
          loading={false}
         />
-        <hr />
        </li>
      ))}
     </ul>
