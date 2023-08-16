@@ -11,3 +11,8 @@
   align-items: center;
   gap:.5rem;
 }
+.button:disabled{
+  cursor:not-allowed;
+  background-color:gray;
+  color:white;
+}
