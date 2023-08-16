@@ -39,6 +39,12 @@ export function reducer(state, action) {
     type: types.saveFolderSucessType,
     folders: [...state.folders, action.payload],
    };
+   case types.savePinInFolderSucessType:
+    return{
+      ...state,
+      type:types.savePinInFolderSucessType,
+      folders:action.payload
+    }
   default:
    return {
     ...state,
