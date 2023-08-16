@@ -19,7 +19,7 @@ export const saveFolder = async (folderName) => {
   name: folderName,
   pins: [],
  };
- 
+
  folders.push(newFolder);
 
  await saveFolders(folders);
@@ -28,9 +28,14 @@ export const saveFolder = async (folderName) => {
 };
 
 export const savePin = async (folderId, pinId) => {
+
  const folders = await getFolders();
 
- const folderIndex = folders.findIndex((f) => f.id === folderId);
+ const folderIndex = folders.findIndex(function (folder) {
+  return folder.id === folderId;
+ });
+
+ console.log(folders, folderIndex)
  folderIndex !== -1
   ? folders[folderIndex].pins.push(pinId)
   : console.log("pasta não encontrada");
